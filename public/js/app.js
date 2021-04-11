@@ -1,5 +1,4 @@
 
-const serverAddress = 'http://localhost:3000'
 const weatherForm = document.querySelector('form')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
@@ -22,7 +21,7 @@ weatherForm.addEventListener('submit', (event)=>{
         return
     }
 
-    fetch(serverAddress + '/weather?address='+ search.value).then((res) =>{
+    fetch('/weather?address='+ search.value).then((res) =>{
         res.json().then((data) => {
             if(data.error){
                 console.log(data.error)
